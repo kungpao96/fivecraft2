@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="FiveCraft - A crafting calculator for gamers and makers">
+  <meta name="theme-color" content="#5D8AA8">
+  
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Add web app manifest for PWA support -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Add iOS meta tags and icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="FiveCraft">
+  
+  <style>
+    /* Critical CSS to avoid layout shift */
+    html, body, #root {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #F8F9FA;
+    }
+    
+    /* Add smooth scrolling for better UX */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Improve button and input styling for web */
+    button, input, textarea {
+      font-family: inherit;
+    }
+    
+    /* Disable pull-to-refresh on mobile browsers */
+    body {
+      overscroll-behavior-y: contain;
+    }
+    
+    /* Improve focus styles for accessibility */
+    *:focus {
+      outline: 2px solid #5D8AA8;
+      outline-offset: 2px;
+    }
+    
+    /* Loading indicator styles */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: #F8F9FA;
+    }
+    
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(93, 138, 168, 0.2);
+      border-radius: 50%;
+      border-top-color: #5D8AA8;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      margin-top: 16px;
+      font-size: 16px;
+      color: #6C757D;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <!-- Initial loading state -->
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading FiveCraft...</div>
+    </div>
+  </div>
+</body>
+</html>
